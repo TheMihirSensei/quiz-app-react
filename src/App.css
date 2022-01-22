@@ -1,6 +1,7 @@
 .qnaContainer {
   width: 100%;
   background-color: #b674ff;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   border-radius: 4em 4em 0 0;

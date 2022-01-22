@@ -8,11 +8,20 @@
 
 .title{
     font-size: 2em;
+    font-weight: 700;
     color: #FFFDD0;
     margin-bottom: 0.2em;
 }
 
 .description{
-    color: #D3D3D3;
-    font-family: 'Satisfy', cursive;
+    color: white;
+    font-size: 1.3em;
+  
+
 }
+.radioInput{
+    color: yellow;
+}
+
+
+

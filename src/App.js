@@ -12,10 +12,7 @@ function App() {
       <AnimeInfo />
    
         <Qna />
-        <Qna />
-
-        <Qna />
-        <Qna />
+      
       </div>
 
 

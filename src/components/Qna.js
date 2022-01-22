@@ -4,15 +4,19 @@ import "./Qna.css"
 function Qna(props) {
   return <div className='qna'>
     <div id='question'>{props.question}</div>
+
+    <div className='optionContainer'>
     {
       props.options.map(option => {
-        return <div>
-          <input type="radio" value={option}></input>
+        return <div className='option'>
           {option}
+          {/* <input id="op" className='radioInput' type="radio" value={option}></input> */}
+          {/* <div for='op' >{option}</div> */}
           </div>
       })
-    }
-    <div id='options'></div>
+    } 
+    </div>
+
   </div>;
 }
 
