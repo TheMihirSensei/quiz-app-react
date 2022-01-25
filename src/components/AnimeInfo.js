@@ -1,9 +1,16 @@
 import React from 'react';
 import "./AnimeInfo.css";
 
+
+
+const titleClicked = (event) => {
+  console.log("title is clicked:")
+}
 function AnimeInfo() {
+
+ 
   return <div className='animeInfo'>
-      <div className='title'>
+      <div className='title' onClick={titleClicked} >
           My hero Academia
       </div>
       <hr style={{ width:"100%"}}/>

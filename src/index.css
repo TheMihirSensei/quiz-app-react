@@ -7,5 +7,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.swiper-button-next::after{
+  display:none
+}
+.swiper-pagination{
+  display: none;
+}
+.swiper-button-prev:after{
+  display:none
+}
 
 
+
+.swiper-scrollbar {
+
+  display: none;
+}

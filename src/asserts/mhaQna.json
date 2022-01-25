@@ -1,0 +1,122 @@
+[
+    {
+        "question":"what the deku real name ?",
+        "options":[
+            "isumaku midoria",
+            "katsuku bakuga",
+            "shotu toriyama",
+            "hintat"
+        ],
+        "answer":"Isumaku midoria"
+    },
+    {
+        "question":"Who was the winner of U.A. Sports Festival Arc?",
+        "options":[
+            "Fumikage Tokoyami",
+            "Shoto Todoroki",
+            "Katsuki Bakugo",
+            "Kai Chisaki"
+        ],
+        "answer":"Katsuki Bakugo"
+    },
+    {
+        "question":"What is Katsuki Bakugo’s alias?",
+        "options":[
+            "Kacchan",
+            "Sirius",
+            "Power Loader",
+            "Gran Torino"
+        ],
+        "answer":"Kacchan"
+    },
+    {
+        "question":"Which one is not a member of the Hideout Raid Team?",
+        "options":[
+            "Edgeshot",
+            "Tiger",
+            "Mirko",
+            "All Might"
+        ],
+        "answer":"Mirko"
+    },
+    {
+        "question":"Anime season 1 consists of how many episodes?",
+        "options":[
+           "20",
+           "14",
+           "17",
+           "13"
+        ],
+        "answer":"13"
+    },
+    {
+        "question":"Who faced off Snipe in the final exam?",
+        "options":[
+            "Shoto Todoroki & Momo Yaoyorozu",
+            "Mezo Shoji & Toru Hagakure",
+            "Fumikage Tokoyami & Tsuyu Asui",
+            "Kyoka Jiro & Koji Koda"
+        ],
+        "answer":"Mezo Shoji & Toru Hagakure"
+    },
+    {
+        "question":"What is a “quirk”?",
+        "options":[
+            "a hero",
+            "a superpower",
+            "a batter",
+            "an event"
+        ],
+        "answer":"a superpower"
+    },
+    {
+        "question":"What is a “quirk”?",
+        "options":[
+            "a hero",
+            "a superpower",
+            "a batter",
+            "an event"
+        ],
+        "answer":"a superpower"
+    },
+    {
+        "question":"Who was using the “magnetism” quirk?",
+        "options":[
+            "Kenji Hikiishi",
+            "Shota Aizawa",
+            "Tsunagu Hakamata",
+            "Nemuri Kayama"
+        ],
+        "answer":"Kenji Hikiishi"
+    },
+    {
+        "question":"Which one is not a “Pro Hero”?",
+        "options":[
+            "Blood Hero: Vlad King",
+            "Death Arms",
+            "Ectoplasm",
+            "Overhaul"
+        ],
+        "answer":"Overhaul"
+    },
+    {
+        "question":"What is All Might’s real name?",
+        "options":[
+            "Enji Todoroki",
+            "Chizome Akaguro",
+            "Toshinori Yagi",
+            "Ochaco Uraraka"
+        ],
+        "answer":"Toshinori Yagi"
+    },
+    {
+        "question":"Who is the principal of U.A. High School?",
+        "options":[
+            "Nezu",
+            "Recovery Girl",
+            "No. 13",
+            "Lunch-Rush"
+        ],
+        "answer":"Nezu"
+    }
+]
