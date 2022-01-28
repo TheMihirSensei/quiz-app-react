@@ -1,7 +1,8 @@
 .qnaContainer {
   width: 100%;
-  background-color: #b674ff;
-  min-height: 100vh;
+  background-color: #E5E5E5;
+  /* min-height: 100vh; */
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   border-radius: 4em 4em 0 0;
@@ -12,10 +13,11 @@
   overflow: hidden;
 }
 .btnContainer{
-  padding:1em;
+  /* padding:1em; */
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: #b674ff;
+  /* background-color: #b674ff; */
   
 }

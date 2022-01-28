@@ -27,24 +27,35 @@ function App() {
   //     })}
   //   </Swiper>
   // );
-
+  const onSlideEvent = (e) => {
+    console.log("lenght is:", mhaQna.length)
+    console.log("swiper on slider event : ", e.realIndex  )
+    if(mhaQna.length === e.realIndex+1){
+      console.log("at the last event>>>>")
+    }
+  }
 
   return (
     <div className="App">
       <Nav />
+
+
       <div className="qnaContainer">
-        <AnimeInfo />
+        {/* <AnimeInfo /> */}
         <Swiper
           direction="vertical"
-          style={{ width: "100vw", height: "80vh" }}
-
-          modules={[Pagination, Scrollbar, A11y]}
+          slidesPerView={'auto'}
+          // modules={[Pagination, Scrollbar, A11y]}
           pagination={{ clickable: true }}
+          spaceBetween={30}
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={(e)=>onSlideEvent(e)}
           navigation
           scrollbar={{ draggable: true }}
         >
+          <SwiperSlide>
+          <AnimeInfo />
+          </SwiperSlide >
           {
             mhaQna.map((qna, index) => {
               return (
@@ -58,18 +69,21 @@ function App() {
             })
 
           }
-        
-        </Swiper>
-      </div>
-      <div className="btnContainer">
-      <Button variant="contained" size="large" style={{background: "green", width:"auto"}}>
+        <SwiperSlide>
+        <div className="btnContainer">
+        <Button variant="contained" size="large" style={{ background: "green", width: "auto" }}>
           Submite Quiz
         </Button>
-        <Button variant="contained" size="large" style={{background: "gray", width:"auto"}}>
+        <Button variant="contained" size="large" style={{ background: "gray", width: "auto" }}>
           reset
         </Button>
       </div>
-     
+        </SwiperSlide>
+
+        </Swiper>
+      </div>
+      
+
     </div>
   );
 }
