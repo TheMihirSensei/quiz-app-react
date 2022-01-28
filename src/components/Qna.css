@@ -70,3 +70,12 @@ transition: 1s;
   width: 2em;
   height: 2em;
 } */
+
+.headerQna{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  justify-content: center;
+}
+
+

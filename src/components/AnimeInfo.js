@@ -8,7 +8,6 @@ const titleClicked = (event) => {
 }
 function AnimeInfo() {
 
- 
   return <div className='animeInfo'>
       <div className='title' onClick={titleClicked} >
           My hero Academia

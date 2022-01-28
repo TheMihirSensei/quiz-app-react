@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e5e5;
 }
 .swiper-button-prev:after{
   display:none
@@ -68,7 +69,7 @@ height: 327px !important;
 
 
 .swiper-slide:nth-child(1) {
-  height: 50% !important;
+  height: min-content !important;
 }
 .swiper-slide:nth-last-child(1) {
   height: 10% !important;

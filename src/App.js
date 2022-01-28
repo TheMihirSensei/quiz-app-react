@@ -38,8 +38,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-
-
+     
       <div className="qnaContainer">
         {/* <AnimeInfo /> */}
         <Swiper
@@ -50,7 +49,7 @@ function App() {
           spaceBetween={30}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={(e)=>onSlideEvent(e)}
-          navigation
+          navigationk
           scrollbar={{ draggable: true }}
         >
           <SwiperSlide>
@@ -63,6 +62,8 @@ function App() {
                   <Qna
                     question={qna.question}
                     options={qna.options}
+                    questionIndex = {index}
+                    totalQuestion = {mhaQna.length}
                   />
                 </SwiperSlide>
               )

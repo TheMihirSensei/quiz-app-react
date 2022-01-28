@@ -3,6 +3,13 @@ import "./Qna.css"
 
 function Qna(props) {
   return <div className='qna'>
+    <div className='headerQna'>
+      <span>
+        <span style={{color:"#7900ff"}} >{props.questionIndex+1}</span>
+        /
+        <span>{props.totalQuestion}</span>
+      </span>
+    </div>
     <div id='question'>{props.question}</div>
     <div className='optionContainer'>
     {
