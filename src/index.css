@@ -72,8 +72,9 @@ height: 327px !important;
   height: min-content !important;
 }
 .swiper-slide:nth-last-child(1) {
-  height: 10% !important;
+  /* height: 20% !important; */
   background-color: #7900FF;
+  border-radius: 2em;
 }
 .swiper-slide {
   width: 100%;
