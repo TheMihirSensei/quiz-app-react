@@ -21,3 +21,10 @@
   /* background-color: #b674ff; */
   
 }
+.gridContainer{
+  height: 100%;
+  margin-top: 45px;
+}
+.paginationQuestion{
+  height: calc(60vh - 70px);
+}

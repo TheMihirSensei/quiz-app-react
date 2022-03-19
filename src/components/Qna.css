@@ -45,9 +45,9 @@ transition: 1s;
 }
 
 /* blue color;  #c184ff */
-.option:hover{
+/* .option:hover{
   background-color: #c184ff; 
-}
+} */
 
 .activeOption{
   background-color: #c184ff; 
