@@ -1,23 +1,23 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 import "./AnimeInfo.css";
 
-
-
 const titleClicked = (event) => {
-  console.log("title is clicked:")
-}
+  console.log("title is clicked:");
+};
 function AnimeInfo() {
+  const selector = useSelector((state) => state.mulQuiz.quiz);
+  console.log("selecctor...on animeInfor", selector);
 
-  return <div className='animeInfo'>
-      <div className='title' onClick={titleClicked} >
-          My hero Academia
+  return (
+    <div className="animeInfo">
+      <div className="title" onClick={titleClicked}>
+        {selector.quizTitle}
       </div>
-      <hr style={{ width:"100%"}}/>
-      <div className='description'>
-      The series focuses on a middle school student Izuku Midoriya, who has no superpowers. ... Academies across the globe train their students to learn to fight crime with their powers. Izuku Midoriya, a boy born without any powers, dreams of being able to become a super hero too, but gets bullied for his unrealistic dreams.
-      </div>
-
-  </div>;
+      <hr style={{ width: "100%" }} />
+      <div className="description">{selector.quizDescription}</div>
+    </div>
+  );
 }
 
 export default AnimeInfo;

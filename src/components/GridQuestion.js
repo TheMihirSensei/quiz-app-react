@@ -4,7 +4,6 @@ import "./GridQuestion.css";
 
 const GridQuestion = (props) => {
   const selector = useSelector((state) => state.mulQuiz.quiz);
-  console.log("selecctor..", selector);
   return (
     <div className="grid-question">
       <div className="alert-label">

@@ -46,7 +46,12 @@ export default (state = initQuizState, action) => {
       previousQuestions[questionIndex].answer = action.payload.answer;
       return {
         ...state,
-        quiz: { quizId: previousObj.quizId, questions: previousQuestions },
+        quiz: {
+          quizId: previousObj.quizId,
+          questions: previousQuestions,
+          quizDescription: previousObj.quizDescription,
+          quizTitle: previousObj.quizTitle,
+        },
         loading: true,
       };
     }
