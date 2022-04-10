@@ -22,31 +22,29 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import GridQuestion from "./components/GridQuestion";
-import { gridAction } from "./redux/actions/quiz";
+import { gridAction, quizInitAction } from "./redux/actions/quiz";
 import axiosInstance from "./config";
 
 function App() {
-  const answerData = useSelector((state) => state.mulQuiz.quiz);
+  const quiz = useSelector((state) => state.mulQuiz.quiz);
   const dispatch = useDispatch();
-  console.log("answer....data", answerData);
-  const [quiz, setQuiz] = useState();
-  const [qa, setQa] = useState();
-  const [gridData, setGridData] = useState();
+  console.log("quiz....", quiz);
 
   const fetchData = async () => {
     const { data } = await axiosInstance.get("/quiz/61fc06d724f2a6f6d98c1326");
-    setQuiz(data.quizDescription);
-    setQa(data.questions);
-    dispatch(gridAction(data));
-    console.log("axios response =>", data);
+    console.log("data...", data);
+    dispatch(
+      quizInitAction({
+        quizDescription: data.quizDescription.quizDescription,
+        quizTitle: data.quizDescription.quizTitle,
+        quizId: data.quizDescription._id,
+        questions: data.questions,
+      })
+    );
   };
   useEffect(() => {
     fetchData();
   }, []);
-
-  useEffect(() => {
-    // checkAnswers();
-  }, [answerData]);
 
   const onSlideEvent = (e) => {
     console.log("lenght is:", mhaQna.length);
@@ -76,25 +74,17 @@ function App() {
           <SwiperSlide>
             <AnimeInfo />
           </SwiperSlide>
-          {qa?.map((qna, index) => {
+          {quiz.questions?.map((qna, index) => {
+            console.log("quna...", qna);
             return (
               <SwiperSlide key={index}>
                 <Qna
-                  answer={(() => {
-                    const stateIndex = answerData?.findIndex(
-                      (q) => q.questionId === qna._id
-                    );
-                    if (stateIndex === -1) {
-                      return "";
-                    } else {
-                      return answerData[stateIndex].answer;
-                    }
-                  })()}
-                  id={qna._id}
+                  id={qna.questionId}
+                  answer={qna.answer}
                   question={qna.question}
                   options={qna.options}
                   questionIndex={index}
-                  totalQuestion={qa.length}
+                  totalQuestion={quiz.questions.length}
                 />
               </SwiperSlide>
             );

@@ -1,29 +1,22 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { quizAction } from "../redux/actions/quiz";
+import { useDispatch, useSelector } from "react-redux";
+import { quizAction, quizAddToAnswerAction } from "../redux/actions/quiz";
 import "./Qna.css";
 
 function Qna(props) {
   const dispatch = useDispatch();
+  const quizSelector = useSelector((state) => state.mulQuiz.quiz);
   const answer = useRef();
   const handleOptionSubmit = (questionId, e) => {
-    console.log("u clicked Me.", questionId);
-    console.log("u clicked Meeeeee.", e.target);
-    dispatch(quizAction({ questionId, answer: e.target.innerHTML }));
+    dispatch(quizAddToAnswerAction({ questionId, answer: e.target.innerHTML }));
   };
-
-  console.log(".....proppp....answer", props.answer);
-
-  useEffect(() => {
-    console.log("answer.....", answer.current.outerText);
-  }, []);
 
   return (
     <div className="qna">
       <div className="headerQna">
         <span>
           <span style={{ color: "#7900ff" }}>{props.questionIndex + 1}</span>/
-          <span>{props.totalQuestion}</span>
+          <span>{quizSelector.questions.length}</span>
         </span>
       </div>
       <div id="question">{props.question}</div>

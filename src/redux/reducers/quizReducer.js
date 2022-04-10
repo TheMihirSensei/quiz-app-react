@@ -1,12 +1,7 @@
-import { quizConstants, gridContants } from "../constants";
+import { quizConstants } from "../constants";
 
 const initQuizState = {
-  quiz: [],
-  loading: false,
-};
-
-const initGridState = {
-  grid: [],
+  quiz: {},
   loading: false,
 };
 
@@ -17,69 +12,69 @@ export default (state = initQuizState, action) => {
         ...state,
         loading: true,
       };
-    case quizConstants.QUIZ_DATA_SUCCESS:
-      let previousState = [...state.quiz];
-      let checkWithQuestionId = previousState.findIndex(
-        (question) => question.questionId === action.payload.questionId
-      );
-      let quizdata = [];
-      if (checkWithQuestionId === -1) {
-        quizdata = [...previousState, action.payload];
-      } else {
-        previousState[checkWithQuestionId] = action.payload;
-        quizdata = [...previousState];
-      }
-      return {
-        ...state,
-        // quiz.push(action.payload),
-        quiz: quizdata,
-        loading: false,
+    case quizConstants.QUIZ_INITIAL_REQUEST: {
+      let quizObj = {
+        quizId: action.payload.quizId,
+        quizDescription: action.payload.quizDescription,
+        quizTitle: action.payload.quizTitle,
       };
-
-    case quizConstants.QUIZ_DATA_FAILURE:
+      let questions = action.payload.questions.map((item) => {
+        return {
+          questionId: item._id,
+          question: item.question,
+          point: item.point,
+          options: item.options,
+          answer: "",
+        };
+      });
+      quizObj["questions"] = questions;
       return {
         ...state,
-        quiz: [],
-        loading: false,
-      };
-    case quizConstants.REMOVE_QUIZ_DATA:
-      return {
-        ...state,
-        quiz: [],
-        loading: false,
-      };
-    default:
-      return state;
-  }
-};
-
-export const gridReducer = (state = initGridState, action) => {
-  switch (action.type) {
-    case gridContants.GRID_DATA_REQUEST:
-      return {
-        ...state,
+        quiz: quizObj,
         loading: true,
       };
-    case gridContants.GRID_DATA_SUCCESS:
-      return {
-        ...state,
-        // quiz.push(action.payload),
-        grid: action.payload,
-        loading: false,
-      };
+    }
 
-    case gridContants.GRID_DATA_FAILURE:
+    case quizConstants.QUIZ_ADD_TO_ANSWER: {
+      let quizObj = {};
+      let previousObj = { ...state.quiz };
+      let previousQuestions = previousObj.questions;
+      let questionIndex = previousQuestions.findIndex(
+        (item) => item.questionId === action.payload.questionId
+      );
+
+      previousQuestions[questionIndex].answer = action.payload.answer;
       return {
         ...state,
-        grid: [],
-        loading: false,
+        quiz: { quizId: previousObj.quizId, questions: previousQuestions },
+        loading: true,
       };
-    case gridContants.REMOVE_GRID_DATA:
+    }
+
+    case quizConstants.QUIZ_DATA_FAILURE: {
       return {
         ...state,
-        grid: [],
+        quiz: [],
         loading: false,
       };
+    }
+
+    case quizConstants.QUIZ_INITIAL_FAIL: {
+      return {
+        ...state,
+        quiz: [],
+        loading: false,
+      };
+    }
+
+    case quizConstants.REMOVE_QUIZ_DATA: {
+      return {
+        ...state,
+        quiz: [],
+        loading: false,
+      };
+    }
+
     default:
       return state;
   }

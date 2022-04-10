@@ -2,29 +2,28 @@ import axiosInstance from "../../config";
 import { gridContants, quizConstants } from "../constants";
 
 //get quiz
-export const quizAction = (question) => {
-  console.log("...quesiotn", question);
+export const quizInitAction = (question) => {
   return async (dispatch) => {
     try {
       dispatch({
         type: quizConstants.QUIZ_DATA_REQUEST,
       });
-      dispatch({ type: quizConstants.QUIZ_DATA_SUCCESS, payload: question });
+      dispatch({ type: quizConstants.QUIZ_INITIAL_REQUEST, payload: question });
     } catch (err) {
-      dispatch({ type: quizConstants.QUIZ_DATA_FAILURE });
+      dispatch({ type: quizConstants.QUIZ_INITIAL_FAIL });
     }
   };
 };
 
-export const gridAction = (payload) => {
+export const quizAddToAnswerAction = (question) => {
   return async (dispatch) => {
     try {
       dispatch({
-        type: gridContants.GRID_DATA_REQUEST,
+        type: quizConstants.QUIZ_DATA_REQUEST,
       });
-      dispatch({ type: gridContants.GRID_DATA_SUCCESS, payload: payload });
+      dispatch({ type: quizConstants.QUIZ_ADD_TO_ANSWER, payload: question });
     } catch (err) {
-      dispatch({ type: gridContants.GRID_DATA_FAILURE });
+      dispatch({ type: quizConstants.QUIZ_DATA_FAILURE });
     }
   };
 };

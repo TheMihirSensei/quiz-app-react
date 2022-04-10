@@ -3,10 +3,8 @@ import { useSelector } from "react-redux";
 import "./GridQuestion.css";
 
 const GridQuestion = (props) => {
-  //   const selector = useSelector((state) => state.mulQuiz.quiz);
-  //   console.log("gridTable ", selector);
-  const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-  // sliderId, IsAnswer , qa.length
+  const selector = useSelector((state) => state.mulQuiz.quiz);
+  console.log("selecctor..", selector);
   return (
     <div className="grid-question">
       <div className="alert-label">
@@ -20,11 +18,16 @@ const GridQuestion = (props) => {
         </div>
       </div>
       <div className="grid-view">
-        {dummy.map((item, index) => (
-          <div className={`grid-item ${item % 2 == 0 ? "success" : "warning"}`}>
-            {item}
-          </div>
-        ))}
+        {selector.questions &&
+          selector.questions.map((item, index) => (
+            <div
+              className={`grid-item ${
+                item.answer !== "" ? "success" : "warning"
+              }`}
+            >
+              {index + 1}
+            </div>
+          ))}
       </div>
     </div>
   );
