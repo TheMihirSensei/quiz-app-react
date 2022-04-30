@@ -4,6 +4,8 @@ import "./GridQuestion.css";
 
 const GridQuestion = (props) => {
   const selector = useSelector((state) => state.mulQuiz.quiz);
+  const { swiperClick } = props;
+
   return (
     <div className="grid-question">
       <div className="alert-label">
@@ -23,6 +25,7 @@ const GridQuestion = (props) => {
               className={`grid-item ${
                 item.answer !== "" ? "success" : "warning"
               }`}
+              onClick={() => swiperClick(index)}
             >
               {index + 1}
             </div>
