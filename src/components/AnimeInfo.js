@@ -7,7 +7,6 @@ const titleClicked = (event) => {
 };
 function AnimeInfo() {
   const selector = useSelector((state) => state.mulQuiz.quiz);
-  console.log("selecctor...on animeInfor", selector);
 
   return (
     <div className="animeInfo">

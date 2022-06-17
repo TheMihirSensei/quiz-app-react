@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    // "lib": ["es2018", "dom", "DOM.Iterable"],
+    // "target": "ES2015",
+
+    // "paths": {
+    //   "@assets/*": ["/assets/*"],
+    //   "@component/*": ["/components/*"],
+    //   "@routes": ["/routes"]
+    // }
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"]
+      // "@containers/*": ["containers/*"],
+      // "@data/*": ["data/*"],
+      // "@helpers/*": ["helpers/*"],
+      // "@hooks/*": ["hooks/*"],
+      // "@interfaces": ["interfaces/*"],
+      // "@lang": ["lang/*"],
+      // "@layout/*": ["layout/*"],
+      // "@libs": ["libs/*"],
+      // "@mobx": ["mobx/*"],
+      // "@pages/*": ["pages/*"],
+      // "@styles/*": ["styles/*"],
+      // "@utils/*": ["utils/*"]
+    }
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx"]
+}
